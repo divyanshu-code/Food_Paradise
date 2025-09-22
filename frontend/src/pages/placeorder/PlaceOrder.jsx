@@ -29,7 +29,7 @@ const PlaceOrder = () => {
     setdata({ ...data, [e.target.name]: e.target.value })
   }
 
-   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let orderItems = [];
@@ -65,7 +65,7 @@ const PlaceOrder = () => {
           localStorage.removeItem("cart");
 
           setTimeout(() => {
-             navigate('/myorder')
+            navigate('/myorder')
           }, 1500);
         } else {
           toast.error("Failed to place COD order!");
@@ -91,7 +91,7 @@ const PlaceOrder = () => {
           key: import.meta.env.VITE_RAZORPAY_KEY_ID,
           amount,
           currency,
-          name: "Food Delivery",
+          name: "Food Paradise",
           description: "Order Payment",
           order_id: orderId,
           handler: async function (res) {
@@ -135,10 +135,20 @@ const PlaceOrder = () => {
         };
 
         const rzp1 = new window.Razorpay(options);
-        rzp1.on("payment.failed", async function () {
-          toast.error("Payment failed! Order not placed.");
+        try {
+          // Call backend to delete failed order
+          await axios.post(url + "/order/verify", { razorpay_order_id: options.order_id, paymentStatus: "failed" }, { headers: { Authorization: `bearer ${token}` } });
+
+          setitem([]);
+          localStorage.removeItem("cart");
+          
           setTimeout(() => { navigate('/') }, 1500);
-        });
+
+        } catch (err) {
+          console.error("Error notifying backend about failed payment:", err);
+          toast.error("Failed to handle payment failure!");
+        }
+
         rzp1.open();
       } else {
         toast.error("Failed to place Razorpay order.");
