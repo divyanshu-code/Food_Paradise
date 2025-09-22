@@ -5,11 +5,12 @@ import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRouter.js";
 import orderRouter from "./routes/orderRoute.js";
+import path from "path";
 
 
 // app config 
 const app = express();
-const port = process.env.Port || 4000;
+const port = process.env.PORT || 4000;
 
 // middleware
 
@@ -25,7 +26,7 @@ connectDB()
 
 app.use('/food', foodRouter)
 app.use('/user' , userRouter)
-app.use('/images' , express.static('uploads'));
+app.use("/images", express.static(path.join(__dirname, "uploads")));
 app.use('/cart' , cartRouter);
 app.use('/order' , orderRouter)
 
