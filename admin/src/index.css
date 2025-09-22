@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+*{
+    box-sizing: border-box;
+    font-family: Outfit;
+}
+
+body{
+
+     height: 100%;
+     background-color: #fcfcfc;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+hr{
+    border: none;
+    height: 2px;
+    background-color: #a9a9a9;
+}
+
+
+.hero input{
+
+    border: 1px solid gray;
+}
+
+.hero p{
+
+    color: #5c5c5c;
+}
+
+.table{
+    
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px ;
+    border: 1px solid #cacaca;
+    font-size: 13px;
+    
+}
+
+.order{
+     
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: start;
+    gap: 30px;
+    border: 1px solid red;
+    padding: 20px ;
+    margin: 20px 0px;
+    font-size: 14px;
+    color: #505050;
+
+}
+
+@media (max-width:600px){
+
+       .section p{
+             display: none;
+       }
+
+       .table{
+            grid-template-columns: 1fr 3fr 1fr;
+            gap: 10px;
+            width: 65vw;
+       }
+
+       #head {
+             display: none;
+       }
+
+       .order{
+          font-size: 12px;
+          grid-template-columns: 0.5fr 2fr 1fr ;
+          padding: 10px ;
+       }
+}
