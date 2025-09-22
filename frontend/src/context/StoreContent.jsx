@@ -10,7 +10,7 @@ const StoreContentProvider = (props) => {
   const [token, setToken] = useState("")
   const [food_list, setfoodlist] = useState([])
 
-  const url = 'http://localhost:4000'
+  const url = 'https://food-paradise-backend-qqs0.onrender.com'
 
   const addtocart = async (itemId) => {
 
