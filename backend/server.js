@@ -6,7 +6,11 @@ import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRouter.js";
 import orderRouter from "./routes/orderRoute.js";
 import path from "path";
+import { fileURLToPath } from "url";
 
+// recreate __dirname for ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // app config 
 const app = express();
