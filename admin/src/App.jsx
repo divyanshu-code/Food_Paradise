@@ -11,7 +11,7 @@ import { Zoom } from 'react-toastify';
 
 const App = () => {
 
-  const url = "http://localhost:4000";
+  const url = "https://food-paradise-backend-qqs0.onrender.com";
   return (
     <>
       <div>
