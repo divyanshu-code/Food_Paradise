@@ -106,7 +106,7 @@ const Header = ({ onLogin }) => {
                       <ul className='child absolute right-0 hidden mt-1 text-black z-10'>
                         <Link to='/myorder' onClick={() => { setMenuOpen(false) }} className='flex items-center  gap-3'> <FaBagShopping size={24} />  <span className=' mt-1 text-sm'>Orders</span> </Link>
                         <hr />
-                        <li  onClick={() => { logout , setMenuOpen(false) }} className='flex items-center gap-3'> <RiLogoutBoxRFill size={24} /> <span className='hover:text-red-500 text-sm'>Logout</span></li>
+                        <li  onClick={() => { logout() , setMenuOpen(false) }} className='flex items-center gap-3'> <RiLogoutBoxRFill size={24} /> <span className='hover:text-red-500 text-sm'>Logout</span></li>
                       </ul>
                     </div>
                   }
