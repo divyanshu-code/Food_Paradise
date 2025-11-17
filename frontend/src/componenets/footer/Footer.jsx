@@ -50,10 +50,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr className='my-6 lg:w-[85vw] w-84  lg:ml-10 ml-3 border-gray-600' />
+      <hr className='lg:my-6 lg:w-[85vw] w-75  lg:ml-10 ml-7 border-gray-600' />
 
-      <div className='lg:text-sm text-[13px]  text-center'>
-        <p>Copyright 2024 © FoodParadise.com - All Rights Reserved.</p>
+      <div className='lg:text-sm text-[15px] lg:p-0 p-5 text-center'>
+        <p>Copyright  © {new Date().getFullYear()} FoodParadise | All Rights Reserved.</p>
       </div>
     </div>
   );
