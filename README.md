@@ -2,8 +2,6 @@
 
 Welcome to Food Paradise — a simple restaurant ordering web application with a user-facing frontend, admin panel, and a Node.js + MongoDB backend.
 
-## About Food Paradise
-
 Food Paradise is a full-stack web app that lets customers browse food items, add them to a cart, and place orders. Administrators can add, update, and remove menu items and manage orders.
 
 ## Inspiration
@@ -83,6 +81,3 @@ Recommended deployment options:
 
 Contributions are welcome — open an issue or submit a pull request.
 
-## Files
-
-The project contains frontend, admin, and backend folders. See [README.md](README.md) for this overview.
