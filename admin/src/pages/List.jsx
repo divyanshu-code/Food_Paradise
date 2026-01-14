@@ -6,7 +6,6 @@ import { Zoom } from 'react-toastify'
 
 const List = ({ url }) => {
 
-
   const [list, setlist] = useState([])
 
   const fetchlist = async () => {
